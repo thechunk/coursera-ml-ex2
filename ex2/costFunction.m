@@ -28,13 +28,8 @@ Jt2 = (1 - y) .* log(1 - hx);
 
 J = sum(Jt1 - Jt2) / m;
 
-alpha = 0.001;
-
-grad = theta;
-for i = 1:1
-	gradt1 = alpha / m * X' * (sigmoid(X * grad) - y);
-	grad = grad - gradt1;
-end
+gradt1 = X' * (sigmoid(X * theta) - y);
+grad = gradt1 / m;
 
 
 
